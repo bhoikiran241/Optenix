@@ -1,0 +1,377 @@
+/* =========================
+   RESET + THEME
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #ffffff;
+  --bg: #040008;
+  --panel: #111111;
+  --border: #222222;
+  --glow: rgba(255, 255, 255, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #111111, #000);
+  color: #fff;
+  animation: fadeIn 0.8s ease;
+}
+
+/* =========================
+   GLOBAL ANIMATION
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   LINKS & BUTTONS
+========================= */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+}
+
+/* a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+} */
+
+button {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 12px 26px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: scaleX(1);
+}
+
+button:hover {
+  color: #000;
+  box-shadow: 0 0 18px var(--glow);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 10px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  text-shadow: 0 0 20px var(--glow);
+}
+
+.logo-img {
+  height: 100px;          /* 👈 control logo size here */
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  cursor: pointer;
+ 
+}
+
+/* =========================
+   SEARCH BAR (INTERACTIVE)
+========================= */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f7f6f6;
+  border: 1px solid #222;
+  border-radius: 30px;
+  padding: 6px 8px 6px 16px;
+  width: 420px;
+  transition: all 0.3s ease;
+}
+
+/* Glow on focus */
+.search-box:focus-within {
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #030303;
+  font-size: 14px;
+}
+
+/* Search Button */
+.search-btn {
+  background: linear-gradient(135deg, #f3f0f0, #faf7f7);
+  border: none;
+  color: #fffdfd;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.search-btn:hover {
+  transform: scale(1.1) rotate(0deg);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Click feedback */
+.search-btn:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================
+   MENU
+========================= */
+.menu {
+  display: flex;
+  gap: 30px;
+  padding: 14px 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-color: #131212;
+}
+
+.menu a {
+  font-size: 15px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  opacity: 1;
+  color: #0717f8;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 22px;
+  width: 100px;
+}
+
+.hero-grid{
+  width: 200px;
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.9)
+  );
+  padding: 44px;
+  min-height: 300px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 60%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.hero:hover::after {
+  opacity: 1;
+}
+
+.hero:hover {
+  transform: scale(1.01);
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero h2 {
+  font-size: 32px;
+}
+
+.hero p {
+  opacity: 0.85;
+  margin: 12px 0 22px;
+}
+
+/* =========================
+   PRODUCT CARDS
+========================= */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  padding: 22px;
+}
+
+.card {
+  background: linear-gradient(180deg, #111, #090909);
+  padding: 32px;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: #fff;
+  box-shadow: 0 0 30px var(--glow);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   PAGES
+========================= */
+.page {
+  padding: 60px 40px;
+  animation: fadeIn 0.6s ease;
+}
+
+.page h1 {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+.page p {
+  max-width: 820px;
+  opacity: 0.85;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: linear-gradient(180deg, #111, #000);
+  padding: 36px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  opacity: 0.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .search-box {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 35px;
+  }
+}
+
