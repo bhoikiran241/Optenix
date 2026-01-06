@@ -1,294 +1,112 @@
-/* =====================================================
-   HERO CONTAINER
-===================================================== */
 .hero-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2a005f, #4b0082);
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #070b2a; /* fallback color */
-  color: #ffffff;
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 60px;
+  color: white;
 }
 
-/* =====================================================
-   HERO BACKGROUND (GRADIENT ONLY)
-===================================================== */
-.hero-bg {
+/* Identity */
+.hero-identity {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-
-  background: linear-gradient(
-    120deg,
-    rgba(10, 30, 120, 0.85),
-    rgba(90, 0, 140, 0.85),
-    rgba(0, 140, 200, 0.85)
-  );
-  background-size: 300% 300%;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  animation: heroColorShift 16s ease-in-out infinite alternate;
-
-  z-index: 1;
+  left: 60px;
+  top: 120px;
 }
 
-/* =====================================================
-   COLOR ANIMATION
-===================================================== */
-@keyframes heroColorShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.hero-name-small {
+  font-size: 20px;
+  opacity: 0.8;
 }
 
-/* =====================================================
-   LEFT TEXT BLOCK
-===================================================== */
-.hero-text-left {
-  position: absolute;
-  top: 32%;
-  left: 6%;
-  max-width: 520px;
-  z-index: 2;
-}
-
-.hero-text-left p {
-  margin: 0 0 10px;
-  font-size: 22px;
-  font-weight: 400;
-  opacity: 0.75;
-  letter-spacing: 0.4px;
-}
-
-.hero-text-left h1 {
-  margin: 0;
-  font-size: 54px;
+.hero-name {
+  font-size: 64px;
   font-weight: 700;
-  line-height: 1.15;
 }
 
-/* =====================================================
-   RIGHT TEXT BLOCK
-===================================================== */
-.hero-text-right {
+/* Tagline */
+.hero-tagline {
   position: absolute;
-  top: 34%;
-  right: 6%;
-  font-size: 28px;
-  font-weight: 400;
-  opacity: 0.7;
-  letter-spacing: 0.6px;
-  z-index: 2;
+  right: 60px;
+  top: 140px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
-/* =====================================================
-   CENTER GLASS CARD
-===================================================== */
+/* Card */
 .hero-card {
-  position: absolute;
-  bottom: 14%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(60%, 820px);
-
-  padding: 46px 52px;
-  border-radius: 22px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(60, 90, 255, 0.65),
-    rgba(0, 160, 255, 0.55)
-  );
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 260px;
+  padding: 40px;
+  background: linear-gradient(135deg, #3b4cca, #1e40af);
+  border-radius: 20px;
   text-align: center;
-  z-index: 2;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
 }
 
 .hero-card h2 {
-  font-family: "Orbitron", sans-serif;
-  text-transform: uppercase;
-  margin: 0 0 14px;
   font-size: 32px;
-  font-weight: 600;
-  letter-spacing: 0.4px;
+  margin-bottom: 10px;
 }
 
 .hero-card p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.95;
+  opacity: 0.9;
+  margin-bottom: 25px;
 }
 
-
-/*logo section*/
-.hero-logo-section {
+/* Buttons */
+.hero-actions {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw; /* full viewport width */
-  height: 100vh; /* full viewport height */
-  overflow: hidden;
-  position: relative;
-  background: #0a0f3a; /* optional background */
+  gap: 20px;
 }
 
-.hero-logo-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.btn-primary,
+.btn-secondary {
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.hero-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* scales image to cover the section */
-  display: block;
+.btn-primary {
+  background: white;
+  color: #1e40af;
 }
 
-.hero-logo-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn-secondary {
+  border: 2px solid white;
   color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0); /* optional overlay */
-  text-align: center;
 }
 
-/* ===== INFO SECTION ===== */
-
+/* Info Section */
 .hero-info-section {
-  padding: 80px 20px;
-  background: #f8fafc;
+  padding: 80px 10%;
+  background: #f9fafb;
+  color: #111;
 }
 
 .hero-info-container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  gap: 50px;
   align-items: center;
-}
-
-/* IMAGE */
-.hero-info-image {
-  animation: fadeSlideLeft 1s ease forwards;
 }
 
 .hero-info-image img {
   width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
-  transition: transform 0.5s ease;
-}
-
-.hero-info-image img:hover {
-  transform: scale(1.03);
-}
-
-/* TEXT */
-.hero-info-text {
-  animation: fadeSlideRight 1s ease forwards;
+  border-radius: 16px;
 }
 
 .hero-info-text h2 {
   font-size: 36px;
-  color: #0f172a;
-  margin-bottom: 20px;
-}
-
-.hero-info-text p {
-  font-size: 16px;
-  color: #475569;
-  line-height: 1.7;
   margin-bottom: 20px;
 }
 
 .hero-info-text ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 .hero-info-text li {
-  font-size: 15px;
-  color: #334155;
   margin-bottom: 10px;
 }
-
-/* BUTTON */
-.hero-info-btn {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.hero-info-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-3px);
-}
-
-/* ANIMATIONS */
-@keyframes fadeSlideLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeSlideRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero-info-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-info-text h2 {
-    font-size: 28px;
-  }
-}
-
