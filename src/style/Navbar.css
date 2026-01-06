@@ -1,100 +1,118 @@
-/* ===============================
-   Navbar Wrapper
-================================ */
-.navbar {
-  background-color: #000;
-  padding: 10px 20px;
-  position: relative; /* required for mobile menu positioning */
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Inner container */
+/* ===== NAVBAR HEADER ===== */
+.navbar {
+  width: 100%;
+  background: #eef1f7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container */
 .navbar-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* ===============================
-   Logo
-================================ */
+/* ===== LOGO ===== */
 .logo img {
-  height: 40px;
+  height: 45px;
   object-fit: contain;
 }
 
-/* ===============================
-   Search Box (Desktop)
-================================ */
+/* ===== SEARCH BOX (DESKTOP) ===== */
 .search-box {
   display: flex;
   align-items: center;
-  gap: 5px;
+  background: #fff;
+  border-radius: 25px;
+  padding: 6px 12px;
+  width: 320px;
 }
 
 .search-box input {
-  padding: 6px 10px;
-  border-radius: 4px;
   border: none;
   outline: none;
+  flex: 1;
+  font-size: 14px;
 }
 
 .search-btn {
   background: none;
   border: none;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 18px;
 }
 
-/* ===============================
-   Icons
-================================ */
+/* ===== ICONS ===== */
 .icons {
   display: flex;
-  gap: 15px;
-  font-size: 18px;
-  color: white;
+  gap: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
-/* ===============================
-   Navigation Links
-================================ */
+/* ===== HAMBURGER ===== */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Remove focus / active box */
+.menu-toggle:focus,
+.menu-toggle:active {
+  outline: none;
+  background: transparent;
+}
+
+/* ===== NAV LINKS ===== */
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  background-color: #000;
-  padding: 10px 0;
+  gap: 30px;
+  padding: 14px 0;
+  background: #eef1f7;
 }
 
 .nav-links a {
-  color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
+  color: #111;
   font-weight: 500;
-  transition: color 0.3s ease;
+  position: relative;
 }
 
-.nav-links a:hover {
-  color: #cccccc;
+/* Hover underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #0a8f7a;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
 }
 
-/* ===============================
-   Hamburger Button
-================================ */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* ===============================
-   Mobile Responsive
-================================ */
-@media (max-width: 768px) {
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 900px) {
   .search-box {
     display: none;
   }
@@ -104,18 +122,33 @@
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 15px 0;
-    display: none;
+    gap: 22px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #eef1f7;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 40px;
   }
 
   .nav-links.open {
-    display: flex;
+    transform: translateX(0);
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+
+  .icons {
+    gap: 14px;
+    font-size: 18px;
   }
 }

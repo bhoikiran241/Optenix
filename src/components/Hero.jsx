@@ -9,14 +9,25 @@ export default function Hero() {
       {/* HERO SECTION */}
       <section className="hero-container">
 
+        {/* Left Identity */}
+        <div className="hero-identity">
+          <span className="hero-name-small">Atharv</span>
+          <h1 className="hero-name">Wavare</h1>
+        </div>
+
+        {/* Right Tagline */}
+        <div className="hero-tagline">
+          <span>ENGINEERED TO EVOLVE</span>
+        </div>
+
         {/* Main Card */}
         <div className="hero-card">
           <h2>Welcome to Optenix</h2>
           <p>Building future-ready digital solutions for education & enterprises</p>
 
           <div className="hero-actions">
-            <Link to="/services" className="btn-primary">Book the Demo</Link>
-            <Link to="/contact" className="btn-secondary">Speak with Expert</Link>
+            <Link to="/services" className="btn-primary">Our Solutions</Link>
+            <Link to="/contact" className="btn-secondary">Contact Us</Link>
           </div>
         </div>
       </section>
