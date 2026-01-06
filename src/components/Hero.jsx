@@ -12,8 +12,8 @@ export default function Hero() {
         <div className="hero-bg-image"></div>
 
         <div className="hero-text-left">
-          <p>FROM VISION TO</p>
-          <h1>INNOVATION</h1>
+          <p>Atharv</p>
+          <h1>Wavare</h1>
         </div>
 
         <div className="hero-text-right">
