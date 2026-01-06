@@ -110,3 +110,16 @@
 .hero-info-text li {
   margin-bottom: 10px;
 }
+
+.hero-logo-wrapper{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.hero-logo-section img{
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  object-fit: cover;
+}
