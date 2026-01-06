@@ -1,46 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Optenix from "../assets/Optenix.png";
+import "../style/Navbar.css"
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <>
-      {/* Main header */}
-      <div className="navbar">
-        <Link to="/" className="logo-link">
-          <img
-            src={Optenix}
-            alt="Optenix Logo"
-            className="logo-img"
-          />
+    <nav className="navbar">
+      <div className="navbar-container">
+        
+        {/* Logo */}
+        <Link to="/" className="logo">
+          <img src={Optenix} alt="Optenix Logo" height={80} width={140} />
         </Link>
 
-      <div className="search-box">
-        <input
-          type="text"
-          placeholder="Search for collections"
-        />
-        <button className="search-btn">
-    🔍
+        {/* Hamburger */}
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
         </button>
-      </div>
 
+        {/* Links */}
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/blogs">Blogs</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/careers">Careers</Link></li>
+        </ul>
 
-      <div className="icons">
-          <span>👤</span>
-          <span>🛒</span>
-        </div>
       </div>
-
-      {/* Menu */}
-      <div className="menu">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/blogs">Blogs</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/careers">Careers</Link>
-      </div>
-    </>
+    </nav>
   );
 }
