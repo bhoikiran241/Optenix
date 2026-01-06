@@ -45,6 +45,10 @@
   color: #0d47a1;
 }
 
+.about-section p {
+  color:white;
+}
+
 .center-text {
   text-align: center;
 }
@@ -83,9 +87,15 @@
   color: #0d47a1;
 }
 
+.info-card p {
+  margin-bottom: 0.6rem;
+  padding: 1px;
+  color: black;
+}
+
 /* HIGHLIGHT */
 .highlight-box {
-  background: #e3f2fd;
+  background: gray;
   padding: 1.8rem;
   border-radius: 14px;
 }

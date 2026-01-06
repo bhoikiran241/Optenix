@@ -10,7 +10,7 @@ const Careers = () => {
         <h1 className="title">Build the Future of Digital India</h1>
 
         <p className="intro">
-          At <strong>Optenix Tech Solutions</strong>, we aren't just selling
+          At <strong>Optenix Tech Solutions</strong>, We aren't just selling
           screens; we are building the digital backbone of Indian schools and
           offices. Based in the heart of Pune’s tech hub, we are a fast-growing
           team of innovators, engineers, and problem-solvers dedicated to local

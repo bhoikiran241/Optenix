@@ -49,20 +49,6 @@ a {
   position: relative;
 }
 
-/* a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background: var(--primary);
-  transition: 0.3s;
-}
-
-a:hover::after {
-  width: 100%;
-} */
 
 button {
   position: relative;
@@ -93,92 +79,6 @@ button:hover::before {
 button:hover {
   color: #000;
   box-shadow: 0 0 18px var(--glow);
-}
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1px 10px;
-}
-
-.logo {
-  font-size: 30px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  transition: 0.3s;
-}
-
-.logo:hover {
-  text-shadow: 0 0 20px var(--glow);
-}
-
-.logo-img {
-  height: 100px;          /* 👈 control logo size here */
-  width: auto;
-  max-width: 300px;
-  object-fit: contain;
-  cursor: pointer;
- 
-}
-
-/* =========================
-   SEARCH BAR (INTERACTIVE)
-========================= */
-.search-box {
-  display: flex;
-  align-items: center;
-  background: #f7f6f6;
-  border: 1px solid #222;
-  border-radius: 30px;
-  padding: 6px 8px 6px 16px;
-  width: 420px;
-  transition: all 0.3s ease;
-}
-
-/* Glow on focus */
-.search-box:focus-within {
-  border-color: #fff;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
-}
-
-.search-box input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #030303;
-  font-size: 14px;
-}
-
-/* Search Button */
-.search-btn {
-  background: linear-gradient(135deg, #f3f0f0, #faf7f7);
-  border: none;
-  color: #fffdfd;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.search-btn:hover {
-  transform: scale(1.1) rotate(0deg);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-}
-
-/* Click feedback */
-.search-btn:active {
-  transform: scale(0.95);
 }
 
 

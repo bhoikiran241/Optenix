@@ -1,40 +1,57 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Optenix from "../assets/Optenix.png";
-import "../style/Navbar.css"
+import "../style/Navbar.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        
-        {/* Logo */}
-        <Link to="/" className="logo">
-          <img src={Optenix} alt="Optenix Logo" height={80} width={140} />
-        </Link>
+    <>
+      {/* Navbar */}
+      <header className="navbar">
+        <div className="navbar-container">
 
-        {/* Hamburger */}
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
+          {/* Logo */}
+          <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
+            <img src={Optenix} alt="Optenix Logo" />
+          </Link>
 
-        {/* Links */}
-        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/shop">Shop</Link></li>
-          <li><Link to="/blogs">Blogs</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/careers">Careers</Link></li>
-        </ul>
+          {/* Search (desktop only via CSS) */}
+          <div className="search-box">
+            <input type="text" placeholder="Search for collections" />
+            <button className="search-btn">🔍</button>
+          </div>
 
-      </div>
-    </nav>
+          {/* Icons */}
+          <div className="icons">
+            <span>👤</span>
+            <span>🛒</span>
+          </div>
+
+          {/* Hamburger */}
+          <button
+            type="button"
+            className="menu-toggle"
+            onClick={() => setMenuOpen(prev => !prev)}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
+
+        </div>
+      </header>
+
+      {/* Navigation Links */}
+      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+        <Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
+        <Link to="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link>
+        <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link to="/careers" onClick={() => setMenuOpen(false)}>Careers</Link>
+      </nav>
+    </>
   );
 }
