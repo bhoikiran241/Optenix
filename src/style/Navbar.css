@@ -1,7 +1,7 @@
 /* Navbar wrapper */
 .navbar {
   width: 100%;
-  background: linear-gradient(120deg, rgba(10,30,120,0.95), rgba(90,0,140,0.95), rgba(0,140,200,0.95));
+  background: linear-gradient(135deg, #2a005f, #4b0082 , #2804f3);
   padding: 10px 20px;
   display: flex;
   justify-content: center;
@@ -19,9 +19,17 @@
 
 /* Logo */
 .logo img {
-  height: 50px;
-  object-fit: contain;
+  height: 100px;          /* larger height */
+  width: auto;            /* maintain aspect ratio */
+  object-fit: contain;    /* prevents stretching/cropping */
+  padding: 0;             
+  margin: 0;              
+  display: block;         
+  image-rendering: auto;  /* ensures smooth rendering */
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4)); /* optional for visibility */
 }
+
+
 
 /* Navigation Links */
 .nav-links {
