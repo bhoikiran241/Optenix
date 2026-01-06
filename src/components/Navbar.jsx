@@ -18,16 +18,16 @@ export default function Navbar() {
           </Link>
 
           {/* Search (desktop only via CSS) */}
-          <div className="search-box">
+          {/* <div className="search-box">
             <input type="text" placeholder="Search for collections" />
             <button className="search-btn">🔍</button>
           </div>
 
           {/* Icons */}
-          <div className="icons">
+          {/* <div className="icons">
             <span>👤</span>
             <span>🛒</span>
-          </div>
+          </div> */} 
 
           {/* Hamburger */}
           <button
