@@ -1,0 +1,105 @@
+/* src/style/Blog.css */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Section Wrapper */
+.blog-section {
+  background-color: #f9f9ff;
+  padding: 4rem 1.5rem;
+  color: #1a1a1a;
+}
+
+/* Container */
+.blog-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section Title */
+.blog-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 2rem;
+}
+
+/* Blog Cards Grid */
+.blog-section .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Blog Card */
+.blog-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Points inside blog */
+.blog-card .point {
+  margin-bottom: 0.8rem;
+}
+
+.blog-card .point h4 {
+  font-weight: 600;
+  color: #0d47a1;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.blog-card .point p {
+  font-weight: 400;
+}
+
+/* CTA Button */
+.blog-card .cta-button {
+  display: inline-block;
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.blog-card .cta-button:hover {
+  background-color: #08306b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-section .section-title {
+    font-size: 2rem;
+  }
+}
