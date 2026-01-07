@@ -33,16 +33,25 @@
 /* SECTIONS */
 .about-section {
   padding: 4rem 0;
+  background-color: white;
+  color: black;
+  font-size: large;
+}
+.about-section  div p{
+  color: black;
 }
 
 .about-section.light {
-  background: #f5f7ff;
+  background: #fafbff;
 }
 
 .about-section h2 {
   font-size: 2.2rem;
   margin-bottom: 1.2rem;
   color: #0d47a1;
+
+  text-align: center;
+
 }
 
 .about-section p {
@@ -94,10 +103,15 @@
 }
 
 /* HIGHLIGHT */
-.highlight-box {
-  background: gray;
-  padding: 1.8rem;
-  border-radius: 14px;
+.highlight-box img {
+  display: flex;
+  background: rgb(204, 204, 204);
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: auto;
+  
+  
 }
 
 /* TECH LIST */

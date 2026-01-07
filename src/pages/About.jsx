@@ -1,6 +1,7 @@
 // src/components/About.jsx
 import React from "react";
 import "../style/About.css";
+import who from "../assets/img5.jpg";
 
 const About = () => {
   return (
@@ -9,7 +10,7 @@ const About = () => {
       {/* HERO / INTRO SECTION */}
       <section className="about-hero">
         <div className="container">
-          <h1>Driving Digital Transformation in Education & Enterprise</h1>
+          <h1>About Optenix Tech Solutions</h1>
           <p>
             Optenix Tech Solutions is a Pune-based OEM and technology service
             provider redefining how India learns and works through intelligent,
@@ -19,27 +20,24 @@ const About = () => {
       </section>
 
       {/* WHO WE ARE */}
-      <section className="about-section">
-        <div className="container two-column">
-          <div>
-            <h2>Who We Are</h2>
-            <p>
-              Optenix Tech Solutions specializes in digital classroom and
-              corporate conferencing solutions. As a trusted
-              <strong> Original Equipment Manufacturer (OEM)</strong>, we design
-              and manufacture interactive displays and AV equipment under the
-              <strong> Make in India</strong> initiative.
-            </p>
-          </div>
-          <div className="highlight-box">
-            <p>
-              From hardware manufacturing to complete system integration,
-              Optenix delivers reliable, scalable technology built for Indian
-              conditions.
-            </p>
-          </div>
+     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src={who} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy"/>
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+        <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" fdprocessedid="1bkkyq">Primary</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4" fdprocessedid="xn5514">Default</button>
         </div>
-      </section>
+      </div>
+    </div>
+
+
+
+
+
 
       {/* WHAT WE DO */}
       <section className="about-section light">
