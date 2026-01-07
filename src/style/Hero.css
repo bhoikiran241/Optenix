@@ -1,125 +1,209 @@
+/* ===============================
+   HERO CONTAINER
+================================ */
 .hero-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #2a005f, #4b0082);
   position: relative;
-  padding: 60px;
-  color: white;
+  min-height: 100vh;
+  padding: clamp(20px, 5vw, 60px);
+  background: linear-gradient(135deg, #2a005f, #4b0082);
+  color: #fff;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Identity */
+/* ===============================
+   IDENTITY
+================================ */
 .hero-identity {
-  position: absolute;
-  left: 60px;
-  top: 120px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .hero-name-small {
-  font-size: 20px;
+  font-size: clamp(12px, 2vw, 16px);
   opacity: 0.8;
 }
 
 .hero-name {
-  font-size: 64px;
+  font-size: clamp(28px, 6vw, 64px);
   font-weight: 700;
+  line-height: 1.1;
+  margin: 5px 0;
 }
 
-/* Tagline */
+/* ===============================
+   TAGLINE
+================================ */
 .hero-tagline {
-  position: absolute;
-  right: 60px;
-  top: 140px;
-  font-size: 22px;
-  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: clamp(12px, 2.5vw, 22px);
+  letter-spacing: 1.5px;
   opacity: 0.9;
 }
 
-/* Card */
+/* ===============================
+   HERO CARD
+================================ */
 .hero-card {
+  margin: 40px auto 0;
   max-width: 700px;
-  margin: 0 auto;
-  margin-top: 260px;
-  padding: 40px;
+  padding: clamp(20px, 4vw, 40px);
   background: linear-gradient(135deg, #3b4cca, #1e40af);
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
 }
 
 .hero-card h2 {
-  font-size: 32px;
+  font-size: clamp(20px, 4vw, 32px);
   margin-bottom: 10px;
 }
 
 .hero-card p {
+  font-size: clamp(14px, 2.5vw, 16px);
   opacity: 0.9;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-/* Buttons */
+/* ===============================
+   ACTION BUTTONS
+================================ */
 .hero-actions {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
 }
 
 .btn-primary,
 .btn-secondary {
   padding: 12px 28px;
   border-radius: 30px;
-  text-decoration: none;
+  font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
-  background: white;
+  background: #fff;
   color: #1e40af;
 }
 
 .btn-secondary {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
-/* Info Section */
+/* ===============================
+   LOGO SECTION
+================================ */
+.hero-logo-section {
+  padding: clamp(30px, 5vw, 60px) 20px;
+  background: #000;
+  text-align: center;
+}
+
+.hero-logo-section img {
+  width: 100%;
+  max-width: 420px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+/* ===============================
+   INFO SECTION
+================================ */
 .hero-info-section {
-  padding: 80px 10%;
+  padding: clamp(40px, 6vw, 80px) 20px;
   background: #f9fafb;
   color: #111;
 }
 
 .hero-info-container {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: clamp(20px, 4vw, 40px);
   align-items: center;
 }
 
 .hero-info-image img {
   width: 100%;
+  max-width: 420px;
   border-radius: 16px;
 }
 
 .hero-info-text h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: clamp(22px, 4vw, 36px);
+  margin-bottom: 16px;
+}
+
+.hero-info-text p {
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-bottom: 16px;
 }
 
 .hero-info-text ul {
-  margin: 20px 0;
+  padding-left: 20px;
+  list-style-type: disc;
 }
 
 .hero-info-text li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-size: clamp(12px, 2vw, 16px);
 }
 
-.hero-logo-wrapper{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+/* ===============================
+   TABLET & UP
+================================ */
+@media (min-width: 768px) {
+  .hero-identity {
+    position: absolute;
+    left: clamp(30px, 5vw, 60px);
+    top: clamp(80px, 10vw, 120px);
+    text-align: left;
+  }
+
+  .hero-tagline {
+    position: absolute;
+    right: clamp(30px, 5vw, 60px);
+    top: clamp(100px, 12vw, 140px);
+    text-align: right;
+    font-size: clamp(14px, 2.5vw, 22px);
+    letter-spacing: 2px;
+  }
+
+  .hero-card {
+    margin-top: clamp(180px, 25vh, 280px);
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero-info-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
-.hero-logo-section img{
-  height: 100%;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-  object-fit: cover;
+
+/* ===============================
+   LARGE DESKTOP
+================================ */
+@media (min-width: 1200px) {
+  .hero-name {
+    font-size: 64px;
+  }
+
+  .hero-tagline {
+    font-size: 22px;
+  }
+
+  .hero-card h2 {
+    font-size: 32px;
+  }
 }

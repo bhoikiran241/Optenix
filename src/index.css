@@ -9,7 +9,7 @@
 
 :root {
   --primary: #ffffff;
-  --bg: #040008;
+  --bg: #ffffff;
   --panel: #111111;
   --border: #222222;
   --glow: rgba(255, 255, 255, 0.35);
@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: "Segoe UI", system-ui, sans-serif;
-  background: radial-gradient(circle at top, #111111, #000);
+ 
   color: #fff;
   animation: fadeIn 0.8s ease;
 }

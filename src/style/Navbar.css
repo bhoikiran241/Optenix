@@ -1,65 +1,194 @@
-/* Navbar wrapper */
+/* ===============================
+   Base Navbar – Glass Effect
+================================ */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(135deg, #2a005f, #4b0082);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  color: white;
+}
+
+/* ===============================
+   Full Width Container
+================================ */
+.navbar-container {
   width: 100%;
-  background: linear-gradient(135deg, #2a005f, #4b0082 , #2804f3);
-  padding: 10px 20px;
+  padding: 16px 18px;
+
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+
   position: relative;
 }
 
-/* Inner container */
-.navbar-container {
-  width: 100%;
-  max-width: 1200px;
+/* ===============================
+   Logo (Left)
+================================ */
+.logo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-/* Logo */
 .logo img {
-  height: 100px;          /* larger height */
-  width: auto;            /* maintain aspect ratio */
-  object-fit: contain;    /* prevents stretching/cropping */
-  padding: 0;             
-  margin: 0;              
-  display: block;         
-  image-rendering: auto;  /* ensures smooth rendering */
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4)); /* optional for visibility */
+  height: 45px;
+  width: auto;
+  max-width: 180px;
+  display: block;
+  filter: drop-shadow(2px 2px 6px rgba(0, 1, 0, 1));
+  border:5px;
 }
 
+/* ===============================
+   Hamburger (Right)
+================================ */
+.menu-toggle {
+  background: none;
+  border: none;
+  padding: 0;
 
-
-/* Navigation Links */
-.nav-links {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5px;
+
+  cursor: pointer;
 }
 
+.menu-toggle span {
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* ===============================
+   Mobile Dropdown – Glass Card
+================================ */
+.nav-links {
+  position: absolute;
+  top: 100%;
+  left: 12px;
+  right: 12px;
+
+  background: rgba(11, 18, 53, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px 0;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+
+  transition: all 0.35s ease;
+}
+
+/* Open state */
+.nav-links.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ===============================
+   Nav Links
+================================ */
 .nav-links a {
+  color: #ffffff;
   text-decoration: none;
-  color: white;
+  font-size: 15px;
   font-weight: 500;
-  transition: color 0.3s;
+  position: relative;
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
 }
 
-/* Mobile & Tablet Responsiveness */
-@media (max-width: 768px) {
+/* ===============================
+   Scroll effect: light background
+================================ */
+.navbar.scrolled {
+  background: white;
+}
+
+.navbar.scrolled .nav-links a {
+  color: #000;
+}
+
+.navbar.scrolled .logo img {
+  filter: brightness(0); /* turns logo black */
+}
+
+.navbar.scrolled .menu-toggle span {
+  background: #000;
+}
+
+
+/* ===============================
+   Desktop Layout
+================================ */
+@media (min-width: 992px) {
+  .menu-toggle {
+    display: none;
+  }
+
   .nav-links {
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+    position: static;
+    flex-direction: row;
+    gap: 28px;
+
+    background: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    border-radius: 0;
+
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    padding: 0;
+  }
+}
+
+/* ===============================
+   Small Phones
+================================ */
+@media (max-width: 480px) {
+  .logo img {
+    height: 34px;
+    max-width: 150px;
   }
 
   .navbar-container {
-    flex-direction: column;
-    align-items: center;
+    padding: 14px 14px;
   }
 }
